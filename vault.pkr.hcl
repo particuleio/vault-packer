@@ -45,12 +45,12 @@ variable "builder_vpc_id" {
 
 variable "vault_version" {
   type    = string
-  default = "1.11.3"
+  default = "1.10.8"
 }
 
 variable "vault_version_checksum" {
   type    = string
-  default = "b433413ce524f26abe6292f7fc95f267e809daeacdf7ba92b68dead322f92deb"
+  default = "b0d6700f434d81f16a6220f3323996dc0ac40cbde078e97f2875fd6a6bf8f741"
 }
 
 data "amazon-ami" "al2022" {
@@ -107,5 +107,6 @@ build {
   provisioner "ansible" {
     extra_arguments = ["--extra-vars", "vault_version=${var.vault_version} vault_version_checksum=${var.vault_version_checksum}"]
     playbook_file   = "./ansible/site.yml"
+    use_proxy = false
   }
 }
