@@ -45,12 +45,12 @@ variable "builder_vpc_id" {
 
 variable "vault_version" {
   type    = string
-  default = "1.10.8"
+  default = "1.11.5"
 }
 
 variable "vault_version_checksum" {
   type    = string
-  default = "b0d6700f434d81f16a6220f3323996dc0ac40cbde078e97f2875fd6a6bf8f741"
+  default = "4f98cbfb105985eeea3057e2fafd34c06638235277d7068e2c34ffde1dc54228"
 }
 
 data "amazon-ami" "al2022" {
